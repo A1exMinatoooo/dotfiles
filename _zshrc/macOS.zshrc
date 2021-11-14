@@ -16,9 +16,9 @@ export GPG_TTY=$TTY
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -30,7 +30,7 @@ autoload -Uz _zinit
 # Load plugins
 zinit snippet https://github.com/SukkaW/zsh-osx-autoproxy/raw/master/zsh-osx-autoproxy.plugin.zsh
 zinit snippet https://github.com/DarrinTisdale/zsh-aliases-exa/raw/master/zsh-aliases-exa.plugin.zsh
-zinit load zdharma/history-search-multi-word
+zinit load zdharma-continuum/history-search-multi-word
 zinit ice blockf; zinit light zsh-users/zsh-completions
 
 # Load oh-my-zsh plugins
@@ -48,16 +48,16 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+    zdharma-continuum/z-a-rust \
+    zdharma-continuum/z-a-as-monitor \
+    zdharma-continuum/z-a-patch-dl \
+    zdharma-continuum/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
 
 ### Start of lazy-load zinit plugins
 zinit ice wait'0'; zinit light zsh-users/zsh-autosuggestions
-zinit ice wait'0' atinit"zpcompinit; zpcdreplay"; zinit light zdharma/fast-syntax-highlighting
+zinit ice wait'0' atinit"zpcompinit; zpcdreplay"; zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait'0'; zinit snippet https://github.com/agkozak/zsh-z/raw/master/zsh-z.plugin.zsh
 ### End of lazy-load
 
@@ -65,7 +65,6 @@ zinit ice wait'0'; zinit snippet https://github.com/agkozak/zsh-z/raw/master/zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # aliases
-alias p4="proxychains4"
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
