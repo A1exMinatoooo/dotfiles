@@ -36,7 +36,7 @@ zinit ice blockf; zinit light zsh-users/zsh-completions
 # Load oh-my-zsh plugins
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/alias-finder/alias-finder.plugin.zsh
-zinit snippet OMZ::plugins/osx/osx.plugin.zsh
+zinit snippet OMZ::plugins/macos/macos.plugin.zsh
 zinit snippet OMZ::plugins/extract/extract.plugin.zsh
 zinit snippet OMZ::plugins/gitignore/gitignore.plugin.zsh
 zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
